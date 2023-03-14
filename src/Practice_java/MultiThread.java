@@ -1,0 +1,26 @@
+package Practice_java;
+class MultiThread implements Runnable {
+	@SuppressWarnings("deprecation")
+	public void run()
+	{
+		try {
+			// Displaying the thread that is running
+			System.out.println(	"Thread " + Thread.currentThread().getId()	+ " is running");
+		}
+		catch (Exception e) {
+			// Throwing an exception
+			System.out.println("Exception is caught");
+		}
+	}
+}
+
+//Main Class
+class Multithread {
+	public static void main(String[] args)
+	{
+		for (int i = 0; i < 10; i++) {
+			Thread object= new Thread(new MultiThread());
+			object.start();
+		}
+	}
+}
